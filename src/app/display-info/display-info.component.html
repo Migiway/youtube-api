@@ -1,0 +1,29 @@
+<h2>Informations de l'utilisateur :</h2>
+<ul>
+  <li>Nom : {{user.lastName}}</li>
+  <li>Prénom : {{user.firstName}}</li>
+</ul>
+<div *ngIf="isLoaded;else inProgressContent">
+  <p>{{ todoList.title }}</p>
+  <p>{{ todoList.id }}</p>
+</div>
+<ng-template #inProgressContent>
+  <img src="https://media1.tenor.com/images/bbecc9990c3587a7c8836dff8caba9c3/tenor.gif?itemid=12453531">
+</ng-template>
+<p>
+  Tableau des données!
+</p>
+<ul>
+  <!-- *ngIf="datas === data2"  -->
+  <li *ngFor="let datas of playlists" class="liste">{{datas}}
+    <!-- <div *ngIf="datas ==='data2'; Else noColor"><span class="ajoutClasse">{{datas}}</span></div>
+    <ng-template #noColor> {{datas}} </ng-template> -->
+  </li>
+</ul>
+<input #playlist type="text" name="playlist" value="">
+<span>{{playlist.value}}</span>
+<button (click)="addPlaylist(playlist.value)">Clique</button>
+<!-- (click) c'est un event binding -->
+
+<input #playliste (keyup.enter)="addPlaylist(playliste.value)">
+<input name="username" id="username" [(ngModel)]="username">{{username}}
