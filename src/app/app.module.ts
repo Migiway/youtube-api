@@ -12,6 +12,11 @@ import { TendancesComponent } from './tendances/tendances.component';
 import { MusiqueComponent } from './musique/musique.component';
 import { SportComponent } from './sport/sport.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
+import { SportContentComponent } from './sport-content/sport-content.component';
+import {SportContentService} from '../service/sport/sport-content.service';
+import {MusiqueContentService} from '../service/musique/musique-content.service';
+import { ChannelComponent } from './channel/channel.component';
+import {ChannelService} from '../service/channel/channel.service';
 
 @NgModule({
   declarations: [
@@ -22,7 +27,9 @@ import { NavMenuComponent } from './nav-menu/nav-menu.component';
     TendancesComponent,
     MusiqueComponent,
     SportComponent,
-    NavMenuComponent
+    NavMenuComponent,
+    SportContentComponent,
+    ChannelComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +37,11 @@ import { NavMenuComponent } from './nav-menu/nav-menu.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    SportContentService,
+    MusiqueContentService,
+    ChannelService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
