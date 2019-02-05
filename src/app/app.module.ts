@@ -10,7 +10,6 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { TendancesComponent } from './tendances/tendances.component';
 import { MusiqueComponent } from './musique/musique.component';
-import { SportComponent } from './sport/sport.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { SportContentComponent } from './sport-content/sport-content.component';
 import {SportContentService} from '../service/sport/sport-content.service';
@@ -26,7 +25,6 @@ import {ChannelService} from '../service/channel/channel.service';
     FooterComponent,
     TendancesComponent,
     MusiqueComponent,
-    SportComponent,
     NavMenuComponent,
     SportContentComponent,
     ChannelComponent

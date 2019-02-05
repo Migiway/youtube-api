@@ -17,7 +17,7 @@ export class MusiqueContentService {
   getMusiqueVideos (): Observable<object> {
     return this.https
       .get(this.musiqueUrlApi)
-      .pipe(map((data) => {
+      .pipe(map((data: any) => {
         console.log(data);
         const items = data.items;
         console.log(items);

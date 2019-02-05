@@ -16,7 +16,7 @@ export class SportContentService {
   getSportVideos (): Observable<object> {
     return this.https
       .get(this.sportUrlApi)
-      .pipe(map((data) => {
+      .pipe(map((data: any) => {
         console.log(data);
         const items = data.items;
         console.log(items);
