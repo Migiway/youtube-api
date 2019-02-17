@@ -16,6 +16,16 @@ import {SportContentService} from '../service/sport/sport-content.service';
 import {MusiqueContentService} from '../service/musique/musique-content.service';
 import { ChannelComponent } from './channel/channel.component';
 import {ChannelService} from '../service/channel/channel.service';
+import {RouterModule, Routes} from '@angular/router';
+import {SearchComponent} from './search/search.component';
+import {HomeComponent} from './home/home.component';
+import {SearchService} from '../service/search/search.service';
+
+
+const appRoutes: Routes = [
+  {path: 'search', component: SearchComponent},
+  {path: '', component: HomeComponent },
+];
 
 @NgModule({
   declarations: [
@@ -27,18 +37,25 @@ import {ChannelService} from '../service/channel/channel.service';
     MusiqueComponent,
     NavMenuComponent,
     SportContentComponent,
-    ChannelComponent
+    ChannelComponent,
+    SearchComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(
+      appRoutes,
+      /*{enableTracing : true}*/
+    )
   ],
   providers: [
     SportContentService,
     MusiqueContentService,
-    ChannelService
+    ChannelService,
+    SearchService
   ],
   bootstrap: [AppComponent]
 })
