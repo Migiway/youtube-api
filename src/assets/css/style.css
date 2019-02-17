@@ -43,6 +43,8 @@ form.navbar-form.navbar-right {
     padding: 6px 43px 6px 12px;
     outline: none;
     box-shadow: 0 0 0;
+    margin-left: 50%;
+    margin-top: 8%;
 }
 .top-search form input[type="text"]:focus {
     outline: none;
@@ -57,7 +59,9 @@ form.navbar-form.navbar-right {
     position: absolute !important;
     outline: none !important;
     top: 9px;
-    right: 26px;
+    left: 100%;
+    margin-left: 40%;
+    margin-top: 8%;
 }
 .header-top-right {
   float: right;

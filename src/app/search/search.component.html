@@ -1,0 +1,47 @@
+
+<app-header></app-header>
+<app-nav-menu></app-nav-menu>
+
+<div id="navbar" class="navbar-collapse collapse">
+  <div class="top-search">
+    <form class="navbar-form navbar-right">
+      <input #search type="text" class="form-control" placeholder="Recherche..." (keyup.enter)="getVideos(search.value)">
+      <input type="submit" value=" " (click)="getVideos(search.value)">
+    </form>
+  </div>
+</div>
+
+
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+  <div class="main-grids">
+    <div class="recommended">
+      <div class="recommended-grids">
+        <div class="recommended-info" *ngIf="search.value == ''; else searchExist " >
+          <h3>Aucune recherche effectuée</h3>
+        </div>
+        <ng-template #searchExist>
+          <div class="recommended-info">
+            <h3>Resultat de votre recherche : {{search.value}}</h3>
+          </div>
+          <div class="col-md-3 resent-grid recommended-grid" *ngFor="let video of searchedVideos">
+            <div class="resent-grid-img recommended-grid-img">
+              <a href="https://www.youtube.com/watch?v={{video.id.videoId}}" target="_blank">
+                <img [src]="video.snippet.thumbnails.high.url" alt="" />
+              </a>
+            </div>
+            <div class="resent-grid-info recommended-grid-info video-info-grid">
+              <h5><a href="https://www.youtube.com/watch?v={{video.id.videoId}}" target="_blank"class="title">{{video.snippet.title}}</a></h5>
+            </div>
+          </div>
+          <nav aria-label="Page navigation example">
+            <ul class="pagination">
+              <li class="page-item"><a class="page-link" (click)="getPreviousPageVideos(search.value)">Previous</a></li>
+              <li class="page-item"><a class="page-link" (click)="getNextPageVideos(search.value)">Next</a></li>
+            </ul>
+          </nav>
+          <div class="clearfix"> </div>
+      </ng-template>
+      </div>
+    </div>
+  </div>
+</div>
