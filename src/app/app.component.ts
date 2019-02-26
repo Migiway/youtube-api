@@ -8,16 +8,7 @@ import {HttpClient} from '@angular/common/http';
 })
 
 export class AppComponent {
-  username: string;
   constructor() {
-    this.username ='Jeff';
  }
- user = {
-   'lastName' : 'data1',
-   'firstName' : 'data1'
- };
-
-
-  title = 'youtube-api';
 
 }

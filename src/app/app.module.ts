@@ -20,14 +20,16 @@ import {RouterModule, Routes} from '@angular/router';
 import {SearchComponent} from './search/search.component';
 import {HomeComponent} from './home/home.component';
 import {SearchService} from '../service/search/search.service';
+import {GetLogoComponent } from './get-logo/get-logo.component';
+import {GetLogoService} from '../service/logo/get-logo.service';
 import {AuthService} from '../service/auth.service';
 import {GoogleApiModule, NG_GAPI_CONFIG, NgGapiClientConfig} from 'ng-gapi';
 import {HttpRequestInterceptor} from '../service/httpRequestInterceptor';
 import { InteractCommentModalComponent } from './interact-comment-modal/interact-comment-modal.component';
 
-
 const appRoutes: Routes = [
   {path: 'search', component: SearchComponent},
+  {path: 'get-logo', component: GetLogoComponent},
   {path: '', component: HomeComponent },
 ];
 
@@ -53,6 +55,7 @@ const gapiClientConfig: NgGapiClientConfig = {
     ChannelComponent,
     SearchComponent,
     HomeComponent,
+    GetLogoComponent,
     InteractCommentModalComponent,
   ],
   imports: [
@@ -74,6 +77,7 @@ const gapiClientConfig: NgGapiClientConfig = {
     MusiqueContentService,
     ChannelService,
     SearchService,
+    GetLogoService,
     AuthService,
     HttpRequestInterceptor,
     {
