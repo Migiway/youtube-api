@@ -14,6 +14,19 @@
 			<div class="file">
 				<a routerLink="/get-logo" routerLinkActive="active">Obtenir un logo</a>
 			</div>
+      <!--<div class="file">-->
+				<!--<a href="https://accounts.google.com/o/oauth2/v2/auth?
+				scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fdrive.metadata.readonly&-->
+ <!--include_granted_scopes=true&
+ session=1&secure=0&
+ response_type=token&
+ redirect_uri=http%3A%2F%2Flocalhost:4200&client_id=488476890181-jf376d7v1k07s4atqa6922i9mi7bdben.apps.googleusercontent.com">Sign In</a>-->
+			<!--</div>-->
+      <div class="file">
+				<button *ngIf="!userAuthData" (click)="oauthSignIn()">Sign In</button>
+        <p (click)="oauthSignOut()" *ngIf="userAuthData">{{userAuthData.full_name}}</p>
+
+			</div>
 			<div class="clearfix"> </div>
 		</div>
     </div>

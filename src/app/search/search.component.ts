@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {DomSanitizer} from '@angular/platform-browser';
+import {YoutubeCommentsLoggedInService} from '../../service/comments/youtube-comments-logged-in.service';
+import {GoogleAuthService} from 'ng-gapi';
+import {GoogleApiOauthStorageService} from '../../service/storage/google-api-oauth-storage.service';
 
 @Component({
   selector: 'app-search',
@@ -14,12 +17,28 @@ export class SearchComponent implements OnInit {
   prevPage = '';
   search = '';
   dangerousVideoUrl = '';
+  isCommentModalOpen = false;
+  videoCommentId: string;
+  videoTitle: string;
+  isUserAuthenticated: boolean;
 
-  constructor(private https: HttpClient, private domSanitizer: DomSanitizer) { }
+  constructor(
+    private https: HttpClient,
+    private domSanitizer: DomSanitizer,
+    private youtubeAuthService: GoogleApiOauthStorageService) { }
 
   ngOnInit() {
+    this.isUserAuthenticated = !!this.youtubeAuthService.getAuthenticationDataWithKey('access_token');
   }
-
+  public openCommentModal(videoId: string, videoTitle: string) {
+    this.isCommentModalOpen = true;
+    this.videoCommentId = videoId;
+    this.videoTitle = videoTitle;
+  }
+  public closeCommentModal() {
+    this.isCommentModalOpen = false;
+    this.videoCommentId = null;
+  }
   public getVideos(searchInput: string) {
     searchInput = searchInput.replace('', '%7C');
     this.search = searchInput;
