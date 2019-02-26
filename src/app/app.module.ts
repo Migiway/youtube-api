@@ -20,12 +20,23 @@ import {RouterModule, Routes} from '@angular/router';
 import {SearchComponent} from './search/search.component';
 import {HomeComponent} from './home/home.component';
 import {SearchService} from '../service/search/search.service';
+import {AuthService} from '../service/auth.service';
+import {GoogleApiModule, NG_GAPI_CONFIG, NgGapiClientConfig} from 'ng-gapi';
 
 
 const appRoutes: Routes = [
   {path: 'search', component: SearchComponent},
   {path: '', component: HomeComponent },
 ];
+
+const gapiClientConfig: NgGapiClientConfig = {
+  client_id: '488476890181-jf376d7v1k07s4atqa6922i9mi7bdben.apps.googleusercontent.com',
+  discoveryDocs: ['https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest'],
+  scope: [
+    'https://www.googleapis.com/auth/youtube.force-ssl',
+    'https://www.googleapis.com/auth/youtube.readonly',
+  ].join(' ')
+};
 
 @NgModule({
   declarations: [
@@ -46,16 +57,21 @@ const appRoutes: Routes = [
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    GoogleApiModule.forRoot({
+      provide: NG_GAPI_CONFIG,
+      useValue: gapiClientConfig
+    }),
     RouterModule.forRoot(
       appRoutes,
       /*{enableTracing : true}*/
-    )
+    ),
   ],
   providers: [
     SportContentService,
     MusiqueContentService,
     ChannelService,
-    SearchService
+    SearchService,
+    AuthService
   ],
   bootstrap: [AppComponent]
 })
