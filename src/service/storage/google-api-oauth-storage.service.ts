@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import {GOOGLE_OAUTH_STORAGE_KEY} from '../../environments/environment';
 import {stringify} from 'querystring';
 
 @Injectable({
@@ -20,7 +19,7 @@ export class GoogleApiOauthStorageService {
   }
   isAuthenticationDataKeyExist(dataKey: string) {
     const oAuthData = this.getAuthenticationData();
-    return !!oAuthData[dataKey];
+    return oAuthData ? !!oAuthData[dataKey] : false;
   }
   getAuthenticationDataWithKey(dataKey: string) {
     const oAuthData = this.getAuthenticationData();
