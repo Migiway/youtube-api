@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DisplayInfoComponent } from './display-info/display-info.component';
 import {FormsModule} from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { TendancesComponent } from './tendances/tendances.component';
@@ -22,6 +22,8 @@ import {HomeComponent} from './home/home.component';
 import {SearchService} from '../service/search/search.service';
 import {AuthService} from '../service/auth.service';
 import {GoogleApiModule, NG_GAPI_CONFIG, NgGapiClientConfig} from 'ng-gapi';
+import {HttpRequestInterceptor} from '../service/httpRequestInterceptor';
+import { InteractCommentModalComponent } from './interact-comment-modal/interact-comment-modal.component';
 
 
 const appRoutes: Routes = [
@@ -50,7 +52,8 @@ const gapiClientConfig: NgGapiClientConfig = {
     SportContentComponent,
     ChannelComponent,
     SearchComponent,
-    HomeComponent
+    HomeComponent,
+    InteractCommentModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -71,7 +74,13 @@ const gapiClientConfig: NgGapiClientConfig = {
     MusiqueContentService,
     ChannelService,
     SearchService,
-    AuthService
+    AuthService,
+    HttpRequestInterceptor,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpRequestInterceptor,
+      multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })
