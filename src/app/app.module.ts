@@ -20,10 +20,12 @@ import {RouterModule, Routes} from '@angular/router';
 import {SearchComponent} from './search/search.component';
 import {HomeComponent} from './home/home.component';
 import {SearchService} from '../service/search/search.service';
-
+import {GetLogoComponent } from './get-logo/get-logo.component';
+import {GetLogoService} from '../service/logo/get-logo.service';
 
 const appRoutes: Routes = [
   {path: 'search', component: SearchComponent},
+  {path: 'get-logo', component: GetLogoComponent},
   {path: '', component: HomeComponent },
 ];
 
@@ -39,7 +41,8 @@ const appRoutes: Routes = [
     SportContentComponent,
     ChannelComponent,
     SearchComponent,
-    HomeComponent
+    HomeComponent,
+    GetLogoComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +58,8 @@ const appRoutes: Routes = [
     SportContentService,
     MusiqueContentService,
     ChannelService,
-    SearchService
+    SearchService,
+    GetLogoService
   ],
   bootstrap: [AppComponent]
 })
