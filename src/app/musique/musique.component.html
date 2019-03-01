@@ -12,7 +12,8 @@
             </a>
           </div>
           <div class="resent-grid-info recommended-grid-info video-info-grid">
-            <h5><a href="https://www.youtube.com/watch?v={{video.link}}" target="_blank"class="title">{{video.title}}</a></h5>
+            <h5><a href="https://www.youtube.com/watch?v={{video.link}}" target="_blank" class="title">{{video.title}}</a></h5>
+            <i class="far fa-comment fa-2x" *ngIf="isUserAuthenticated" (click)="openCommentModal(video.link, video.title)"></i>
           </div>
         </div>
         <div class="clearfix"> </div>
@@ -20,3 +21,11 @@
     </div>
   </div>
 </div>
+
+<app-interact-comment-modal
+  (closeCommentPopin)="closeCommentModal()"
+  [isInteractCommentPopinOpen]="isCommentModalOpen"
+  [videoCommentId]="videoCommentId"
+  [videoTitle]="videoTitle"
+>
+</app-interact-comment-modal>

@@ -1,3 +1,18 @@
 p {
   margin: 10px;
 }
+
+.fa-comment:hover{
+  color: #21DEEF;
+}
+
+.fa-comment{
+  color: #272c2e;
+}
+
+
+
+p:hover{
+  color: #21DEEF;
+  font-weight: bold;
+}

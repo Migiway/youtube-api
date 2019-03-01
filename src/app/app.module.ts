@@ -26,6 +26,7 @@ import {AuthService} from '../service/auth.service';
 import {GoogleApiModule, NG_GAPI_CONFIG, NgGapiClientConfig} from 'ng-gapi';
 import {HttpRequestInterceptor} from '../service/httpRequestInterceptor';
 import { InteractCommentModalComponent } from './interact-comment-modal/interact-comment-modal.component';
+import { InteractRateModalComponent } from './interact-rate-modal/interact-rate-modal.component';
 
 const appRoutes: Routes = [
   {path: 'search', component: SearchComponent},
@@ -57,6 +58,8 @@ const gapiClientConfig: NgGapiClientConfig = {
     HomeComponent,
     GetLogoComponent,
     InteractCommentModalComponent,
+    InteractRateModalComponent,
+    InteractRateModalComponent
   ],
   imports: [
     BrowserModule,
