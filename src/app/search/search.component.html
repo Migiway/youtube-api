@@ -31,7 +31,8 @@
             </div>
             <div class="resent-grid-info recommended-grid-info video-info-grid">
               <h5><a href="https://www.youtube.com/watch?v={{video.id.videoId}}" target="_blank"class="title">{{video.snippet.title}}</a></h5>
-              <p *ngIf="isUserAuthenticated" (click)="openCommentModal(video.id.videoId, video.snippet.title)">Ajouter un commentaire</p>
+              <i class="far fa-comment fa-2x" *ngIf="isUserAuthenticated" (click)="openCommentModal(video.id.videoId, video.snippet.title)"></i>
+              <p class="rating" *ngIf="isUserAuthenticated" (click)="openRateModal(video.id.videoId, video.snippet.title)">LIKE/DISLIKE</p>
             </div>
           </div>
           <nav aria-label="Page navigation example">
@@ -54,3 +55,11 @@
   [videoTitle]="videoTitle"
 >
 </app-interact-comment-modal>
+
+<app-interact-rate-modal
+  (closeRatePopin)="closeRateModal()"
+  [isInteractRatePopinOpen]="isRateModalOpen"
+  [videoRateId]="videoRateId"
+  [videoTitle]="videoTitle"
+>
+</app-interact-rate-modal>

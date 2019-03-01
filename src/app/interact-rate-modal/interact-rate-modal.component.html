@@ -1,0 +1,8 @@
+<div class="comment-popin" ngClass="{{isInteractRatePopinOpen && 'open'}}">
+  <h2>Like/Dislike : {{videoTitle}}</h2>
+  <form id="form" #form>
+    <i class="fas fa-thumbs-up fa-2x" (click)="postRateToVideo('like')"></i>
+    <i class="fas fa-thumbs-down fa-2x" (click)="postRateToVideo('dislike')"></i>
+  </form>
+</div>
+<div class="overlay" ngClass="{{isInteractRatePopinOpen && 'open'}}" (click)="eventCloseRateModal()"></div>

@@ -18,7 +18,9 @@ export class SearchComponent implements OnInit {
   search = '';
   dangerousVideoUrl = '';
   isCommentModalOpen = false;
+  isRateModalOpen = false;
   videoCommentId: string;
+  videoRateId: string;
   videoTitle: string;
   isUserAuthenticated: boolean;
 
@@ -38,6 +40,16 @@ export class SearchComponent implements OnInit {
   public closeCommentModal() {
     this.isCommentModalOpen = false;
     this.videoCommentId = null;
+  }
+
+  public openRateModal(videoId: string, videoTitle: string) {
+    this.isRateModalOpen = true;
+    this.videoRateId = videoId;
+    this.videoTitle = videoTitle;
+  }
+  public closeRateModal() {
+    this.isRateModalOpen = false;
+    this.videoRateId = null;
   }
   public getVideos(searchInput: string) {
     searchInput = searchInput.replace('', '%7C');

@@ -1,9 +1,4 @@
-import GoogleAuth = gapi.auth2.GoogleAuth;
-import googleClientLoad = gapi.client.load;
-import {GoogleApiModule, GoogleApiConfig, GoogleApiService, GoogleAuthService, NgGapiClientConfig} from 'ng-gapi';
-import IsSignedIn = gapi.auth2.IsSignedIn;
-import {HttpClient} from '@angular/common/http';
-import {DomSanitizer} from '@angular/platform-browser';
+import {GoogleApiService, GoogleAuthService} from 'ng-gapi';
 import {Injectable} from '@angular/core';
 
 @Injectable({
