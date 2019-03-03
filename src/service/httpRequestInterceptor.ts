@@ -14,7 +14,8 @@ import { Observable } from 'rxjs/Observable';
 export class HttpRequestInterceptor implements HttpInterceptor {
   constructor(public authStorage: GoogleApiOauthStorageService) {}
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    if (!request.url.includes('youtube/v3/')) {
+    // if (!request.url.includes('youtube/v3/commentThreads') || !request.url.includes('/youtube/v3/videos/rate')) {
+      if (!request.url.includes('youtube/v3/')) {
       return next.handle(request);
     }
 
