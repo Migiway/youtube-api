@@ -58,13 +58,5 @@ export class PlaylistComponent implements OnInit {
     this.isCommentModalOpen = false;
     this.videoCommentId = null;
   }
-  public openRateModal(videoId: string, videoTitle: string) {
-    this.isRateModalOpen = true;
-    this.videoRateId = videoId;
-    this.videoTitle = videoTitle;
-  }
-  public closeRateModal() {
-    this.isRateModalOpen = false;
-    this.videoRateId = null;
-  }
+  
 }
