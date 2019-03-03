@@ -14,6 +14,8 @@ import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { SportContentComponent } from './sport-content/sport-content.component';
 import {SportContentService} from '../service/sport/sport-content.service';
 import {MusiqueContentService} from '../service/musique/musique-content.service';
+import { PlaylistComponent } from './playlist/playlist.component';
+import {PlaylistContentService} from '../service/playlist/playlist-content.service';
 import { ChannelComponent } from './channel/channel.component';
 import {ChannelService} from '../service/channel/channel.service';
 import {RouterModule, Routes} from '@angular/router';
@@ -58,6 +60,7 @@ const gapiClientConfig: NgGapiClientConfig = {
     NavMenuComponent,
     SportContentComponent,
     ChannelComponent,
+    PlaylistComponent,
     SearchComponent,
     HomeComponent,
     GetLogoComponent,
@@ -84,6 +87,7 @@ const gapiClientConfig: NgGapiClientConfig = {
   providers: [
     SportContentService,
     MusiqueContentService,
+    PlaylistContentService,
     ChannelService,
     SearchService,
     GetLogoService,
