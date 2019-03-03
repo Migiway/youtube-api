@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {GoogleApiOauthStorageService} from '../../service/storage/google-api-oauth-storage.service';
 
 @Component({
   selector: 'app-nav-menu',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavMenuComponent implements OnInit {
 
-  constructor() { }
+  isUserAuthenticated: boolean;
+
+  constructor(private apiOauthStorageService: GoogleApiOauthStorageService) { }
 
   ngOnInit() {
+    this.isUserAuthenticated = !!this.apiOauthStorageService.getAuthenticationDataWithKey('access_token');
   }
 
 }

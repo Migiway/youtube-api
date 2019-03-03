@@ -11,6 +11,7 @@
 		<li class="active"><a routerLink="/" routerLinkActive="active" class="home-icon"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Home</a></li>
 		<li><a routerLink="/search" routerLinkActive="active" class="search-icon"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>Search</a></li>
 		<li><a routerLink="/get-logo" routerLinkActive="active" class="user-icon"><span class="glyphicon glyphicon-home glyphicon-picture" aria-hidden="true"></span>Obtenir un logo</a></li>
+		<li *ngIf="isUserAuthenticated"><a routerLink="/playlists" routerLinkActive="active" class="user-icon"><span class="glyphicon glyphicon-home glyphicon-picture" aria-hidden="true"></span>Playlists</a></li>
 	  </ul>
 		<div class="side-bottom">
 			<div class="side-bottom-icons">
