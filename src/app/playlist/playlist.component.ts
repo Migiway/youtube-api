@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {PlaylistContentService} from '../../service/playlist/playlist-content.service';
 import {Observable} from 'rxjs';
+import {PlaylistContentService} from '../../service/playlist/playlist-content.service';
 import {Video} from '../../model/Video';
 import {GoogleApiOauthStorageService} from '../../service/storage/google-api-oauth-storage.service';
 import {YoutubeCommentsLoggedInService} from '../../service/comments/youtube-comments-logged-in.service';
