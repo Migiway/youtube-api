@@ -32,8 +32,9 @@ import { InteractRateModalComponent } from './interact-rate-modal/interact-rate-
 import { InteractDescriptionModalComponent } from './interact-description-modal/interact-description-modal.component';
 import { PlaylistsLoggedUserComponent } from './playlists-logged-user/playlists-logged-user.component';
 import { InteractPlaylistModalComponent } from './interact-playlist-modal/interact-playlist-modal.component';
-import {ConfirmationService, ConfirmDialogModule} from 'primeng/primeng';
+import {ConfirmationService, ConfirmDialogModule, MessageService} from 'primeng/primeng';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {ToastModule} from 'primeng/toast';
 
 const appRoutes: Routes = [
   {path: 'search', component: SearchComponent},
@@ -81,6 +82,7 @@ const gapiClientConfig: NgGapiClientConfig = {
     HttpClientModule,
     ConfirmDialogModule,
     BrowserAnimationsModule,
+    ToastModule,
     GoogleApiModule.forRoot({
       provide: NG_GAPI_CONFIG,
       useValue: gapiClientConfig
@@ -100,6 +102,7 @@ const gapiClientConfig: NgGapiClientConfig = {
     AuthService,
     HttpRequestInterceptor,
     ConfirmationService,
+    MessageService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: HttpRequestInterceptor,
