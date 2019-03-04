@@ -6,8 +6,7 @@ import {GoogleApiOauthStorageService} from '../../service/storage/google-api-oau
 import {YoutubeDescriptionsLoggedInService} from '../../service/descriptions/youtube-descriptions-logged-in.service';
 import {GoogleAuthService} from 'ng-gapi';
 
-import {ConfirmationService} from 'primeng/api';
-import {Router} from '@angular/router';
+import {ConfirmationService, MessageService} from 'primeng/api';
 
 
 @Component({
@@ -27,7 +26,7 @@ export class PlaylistsLoggedUserComponent implements OnInit {
 
   constructor(private playlistsLoggedUserService: PlaylistsLoggedUserService,
               private confirmationService: ConfirmationService,
-              private router: Router ) { }
+              private messageService: MessageService) { }
 
   ngOnInit() {
     this.responsePlaylists = this.playlistsLoggedUserService.getPlaylists();
@@ -35,10 +34,10 @@ export class PlaylistsLoggedUserComponent implements OnInit {
       this.playlists = data;
       console.log(this.playlists);
     }, error => {
-        console.log(error);
+        this.messageService.add({severity: 'error', summary: 'Playlist', detail: 'Les playlists n\'ont pas été chargées'});
       },
       () => {
-        console.log('on complete');
+        this.messageService.add({severity: 'success', summary: 'Playlist', detail: 'Les playlists ont été chargées avec succès' });
       });
   }
 
