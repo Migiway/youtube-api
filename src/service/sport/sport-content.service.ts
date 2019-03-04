@@ -8,7 +8,7 @@ import {map} from 'rxjs/operators';
 export class SportContentService {
 
   sportUrlApi = 'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=4' +
-    '&playlistId=PLx6bGx4zt6EmR3pXhCZNhMYWTh7GJaJ8X&key=AIzaSyBnRWLy2jjb9Cpyadm3plaPd__94gJEGzo';
+    '&playlistId=PLIN0y6TbDGWwestC9ZblrwgR7N8CuINYN&key=AIzaSyBnRWLy2jjb9Cpyadm3plaPd__94gJEGzo';
 
 
   constructor(private https: HttpClient) { }
