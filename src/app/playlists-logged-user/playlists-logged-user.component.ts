@@ -2,6 +2,10 @@ import {Component, OnInit} from '@angular/core';
 import {Observable} from 'rxjs';
 import {PlaylistsLoggedUserService} from '../../service/playlists-logged-user/playlists-logged-user.service';
 import {Playlist} from '../../model/Playlist';
+import {GoogleApiOauthStorageService} from '../../service/storage/google-api-oauth-storage.service';
+import {YoutubeDescriptionsLoggedInService} from '../../service/descriptions/youtube-descriptions-logged-in.service';
+import {GoogleAuthService} from 'ng-gapi';
+
 import {ConfirmationService} from 'primeng/api';
 import {Router} from '@angular/router';
 
@@ -14,7 +18,12 @@ import {Router} from '@angular/router';
 export class PlaylistsLoggedUserComponent implements OnInit {
 
   responsePlaylists: Observable<any> ;
+  isDescriptionsModalOpen = false;
   playlists: Playlist[];
+  playlistDescriptionId: string;
+  playlistTitle: string;
+  isUserAuthenticated: boolean;
+
 
   constructor(private playlistsLoggedUserService: PlaylistsLoggedUserService,
               private confirmationService: ConfirmationService,
@@ -33,6 +42,12 @@ export class PlaylistsLoggedUserComponent implements OnInit {
       });
   }
 
+ public openDescriptionModal(playlistId: string, playlistTitle: string) {
+    this.isDescriptionsModalOpen = true;
+    this.playlistDescriptionId = playlistId;
+    this.playlistTitle = playlistTitle;
+  }
+
   deletePlaylist(playlistId: string) {
     this.confirmationService.confirm({
       message: 'Voulez-vous supprimer cette playlist ?',
@@ -44,4 +59,8 @@ export class PlaylistsLoggedUserComponent implements OnInit {
   }
 
 
+  public closeDescriptionModal() {
+    this.isDescriptionsModalOpen = false;
+    this.playlistDescriptionId = null;
+  }
 }

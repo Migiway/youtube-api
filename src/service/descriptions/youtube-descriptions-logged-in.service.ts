@@ -4,22 +4,19 @@ import {HttpClient} from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class YoutubeCommentsLoggedInService {
-  youtubeCommentsBaseUrl = 'https://www.googleapis.com/youtube/v3/commentThreads';
 
-  
+export class YoutubeDescriptionsLoggedInService {
+  youtubeDescriptionsBaseUrl = 'https://www.googleapis.com/youtube/v3/playlists';
+ 
   constructor(private httpClient: HttpClient) { }
 
-  postCommentsForVideoId(videoId: string, commentText: string): Promise<any> {
+  putDescriptionsForVideoId(playlistId: string, descriptionText: string, titleText: string): Promise<any> {
     return new Promise((resolve, reject) => {
-      this.httpClient.post(this.youtubeCommentsBaseUrl, {
+      this.httpClient.put(this.youtubeDescriptionsBaseUrl, {
+        id: playlistId,
         snippet: {
-          videoId,
-          topLevelComment: {
-            snippet: {
-              textOriginal: commentText,
-            },
-          },
+          title: titleText,
+          description: descriptionText,
         },
       }, {
         params: {

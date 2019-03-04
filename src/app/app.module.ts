@@ -29,6 +29,7 @@ import {GoogleApiModule, NG_GAPI_CONFIG, NgGapiClientConfig} from 'ng-gapi';
 import {HttpRequestInterceptor} from '../service/httpRequestInterceptor';
 import { InteractCommentModalComponent } from './interact-comment-modal/interact-comment-modal.component';
 import { InteractRateModalComponent } from './interact-rate-modal/interact-rate-modal.component';
+import { InteractDescriptionModalComponent } from './interact-description-modal/interact-description-modal.component';
 import { PlaylistsLoggedUserComponent } from './playlists-logged-user/playlists-logged-user.component';
 import { InteractPlaylistModalComponent } from './interact-playlist-modal/interact-playlist-modal.component';
 import {ConfirmationService, ConfirmDialogModule} from 'primeng/primeng';
@@ -69,6 +70,7 @@ const gapiClientConfig: NgGapiClientConfig = {
     GetLogoComponent,
     InteractCommentModalComponent,
     InteractRateModalComponent,
+    InteractDescriptionModalComponent,
     PlaylistsLoggedUserComponent,
     InteractPlaylistModalComponent
   ],
