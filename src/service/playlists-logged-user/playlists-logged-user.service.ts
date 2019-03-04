@@ -7,8 +7,10 @@ import {map} from 'rxjs/operators';
 })
 export class PlaylistsLoggedUserService {
 
-  getOwnerPlaylistsUrl = 'https://www.googleapis.com/youtube/v3/playlists?part=snippet&mine=true' +
+  getOwnerPlaylistsUrl = 'https://www.googleapis.com/youtube/v3/playlists?part=snippet&maxResults=9&mine=true' +
     '&key=AIzaSyBnRWLy2jjb9Cpyadm3plaPd__94gJEGzo';
+
+  deletePlaylistUrl = 'https://www.googleapis.com/youtube/v3/playlists';
   constructor(private https: HttpClient) { }
 
   getPlaylists() {
@@ -26,9 +28,22 @@ export class PlaylistsLoggedUserService {
             img: playlist.snippet.thumbnails.medium.url
           };
         });
-
         console.log(playlists);
         return playlists;
       }));
+  }
+
+  deletePlaylist(playlistId: string) {
+    this.https.delete(this.deletePlaylistUrl, {
+      params: {
+        id: playlistId,
+        key: 'AIzaSyBnRWLy2jjb9Cpyadm3plaPd__94gJEGzo'
+      }
+    }).subscribe((value) => {
+      console.log(value);
+    },
+      (err) => {
+      console.log(err);
+      });
   }
 }

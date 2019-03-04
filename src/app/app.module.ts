@@ -31,12 +31,15 @@ import { InteractCommentModalComponent } from './interact-comment-modal/interact
 import { InteractRateModalComponent } from './interact-rate-modal/interact-rate-modal.component';
 import { PlaylistsLoggedUserComponent } from './playlists-logged-user/playlists-logged-user.component';
 import { InteractPlaylistModalComponent } from './interact-playlist-modal/interact-playlist-modal.component';
+import {ConfirmationService, ConfirmDialogModule} from 'primeng/primeng';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 const appRoutes: Routes = [
   {path: 'search', component: SearchComponent},
   {path: 'get-logo', component: GetLogoComponent},
   {path: 'get-logo', component: GetLogoComponent},
   {path: 'playlists', component: PlaylistsLoggedUserComponent},
+  {path: 'test', component: InteractPlaylistModalComponent},
   {path: '', component: HomeComponent },
 ];
 
@@ -66,15 +69,16 @@ const gapiClientConfig: NgGapiClientConfig = {
     GetLogoComponent,
     InteractCommentModalComponent,
     InteractRateModalComponent,
-    InteractRateModalComponent,
     PlaylistsLoggedUserComponent,
-    InteractPlaylistModalComponent,
+    InteractPlaylistModalComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    ConfirmDialogModule,
+    BrowserAnimationsModule,
     GoogleApiModule.forRoot({
       provide: NG_GAPI_CONFIG,
       useValue: gapiClientConfig
@@ -93,6 +97,7 @@ const gapiClientConfig: NgGapiClientConfig = {
     GetLogoService,
     AuthService,
     HttpRequestInterceptor,
+    ConfirmationService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: HttpRequestInterceptor,
