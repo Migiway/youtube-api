@@ -13,14 +13,14 @@ export class InteractDescriptionModalComponent implements OnInit {
   @Input() playlistTitle: string;
   @Input() playlistDescription: string;
   @Output() closeDescriptionPopin = new EventEmitter<Boolean>();
-  constructor(private youtubeDescriptions: YoutubeDescriptionsLoggedInService) { }
+  constructor(private youtubeDescriptionsLoggedInService: YoutubeDescriptionsLoggedInService) { }
   ngOnInit() {
   }
   eventCloseDescriptionModal() {
     this.closeDescriptionPopin.emit(false);
   }
   putDescriptionToVideo(descriptionText: string, titleText: string, descriptionForm: NgForm) {
-    this.youtubeDescriptions.putDescriptionsForVideoId(this.playlistDescriptionId, descriptionText, titleText)
+    this.youtubeDescriptionsLoggedInService.putDescriptionsForVideoId(this.playlistDescriptionId, descriptionText, titleText)
       .then(res => {
         descriptionForm.reset();
         this.eventCloseDescriptionModal();

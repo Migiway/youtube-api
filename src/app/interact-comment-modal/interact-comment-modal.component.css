@@ -27,10 +27,10 @@
   font-size: 10px;
 }
 
-.comment-popin input{
+.comment-popin button{
   display: block;
-  width: 50%;
   margin: 0 auto;
+  font-size: 12px;
 }
 
 .overlay {

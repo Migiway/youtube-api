@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
 import {DomSanitizer} from '@angular/platform-browser';
 import {HttpClient} from '@angular/common/http';
 import {AuthService} from '../../service/auth.service';
 import {GoogleApiOauthStorageService} from '../../service/storage/google-api-oauth-storage.service';
+import {MessageService} from 'primeng/api';
 
 @Component({
   selector: 'app-header',
@@ -17,15 +18,24 @@ export class HeaderComponent implements OnInit {
   search = '';
   dangerousVideoUrl = '';
   userAuthData: object;
+  isUserAuthDefined = false;
   constructor(
     private http: HttpClient,
     private sanitizer: DomSanitizer,
     private authService: AuthService,
-    private googleAuthStorage: GoogleApiOauthStorageService) { }
+    private googleAuthStorage: GoogleApiOauthStorageService,
+    private changeDetector: ChangeDetectorRef,
+    private messageService: MessageService) { }
 
   ngOnInit() {
     this.userAuthData = this.googleAuthStorage.getAuthenticationData();
+    this.isUserAuthDefined = !!this.userAuthData;
     this.authService.loadCallbackGoogleApi();
+    this.authService.onSuccessLoggedIn.subscribe(res => {
+      this.isUserAuthDefined = true;
+      this.handleSignInSuccess(res);
+      this.changeDetector.detectChanges();
+    });
   }
 
   getVideos(varSearch: string) {
@@ -46,8 +56,11 @@ export class HeaderComponent implements OnInit {
 
   oauthSignIn() {
     this.authService.signIn(
-      (res) => this.handleSignInSuccess(res),
+      (res) => {
+        this.handleSignInSuccess(res);
+      },
       (err) => this.handleSignInAborted(err));
+
   }
   handleSignInSuccess(response) {
     const storageData = {
@@ -65,6 +78,11 @@ export class HeaderComponent implements OnInit {
   }
   oauthSignOut() {
     this.authService.signOut();
+    this.isUserAuthDefined = !!this.userAuthData;
+    this.authService.onSuccessLoggedOut.subscribe(res => {
+      this.isUserAuthDefined = false;
+      this.changeDetector.detectChanges();
+    });
     this.googleAuthStorage.resetAuthenticationData();
   }
 }

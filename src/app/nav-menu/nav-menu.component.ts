@@ -9,11 +9,20 @@ import {GoogleApiOauthStorageService} from '../../service/storage/google-api-oau
 export class NavMenuComponent implements OnInit {
 
   isUserAuthenticated: boolean;
+  activeHome = false;
+  activeSearch = false;
+  activeGetLogo = false;
+  activePlaylist = false;
 
   constructor(private apiOauthStorageService: GoogleApiOauthStorageService) { }
 
   ngOnInit() {
     this.isUserAuthenticated = !!this.apiOauthStorageService.getAuthenticationDataWithKey('access_token');
   }
+
+  activeHomeItem() {this.activeHome = true; }
+  activeSearchItem() {this.activeSearch = !this.activeSearch; }
+  activeGetLogoItem() {this.activeGetLogo = !this.activeGetLogo; }
+  activePlaylistItem() {this.activePlaylist = !this.activePlaylist; }
 
 }
