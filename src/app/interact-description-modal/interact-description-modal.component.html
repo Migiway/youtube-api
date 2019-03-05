@@ -1,9 +1,9 @@
 <div class="description-popin" ngClass="{{isInteractDescriptionPopinOpen && 'open'}}">
   <h2>Description pour : {{playlistTitle}} </h2>
   <form id="form" #form>
-    <input #title type="text" name="title" placeholder="Titre de la playlist">
-    <textarea #description name="description" placeholder="Entrez votre description..."></textarea>
-    <input type="submit" (click)="putDescriptionToVideo(description.value, title.value, form)" value="Envoyer la description">
+    <input #title type="text" name="title" placeholder="Titre de la playlist" value="{{playlistTitle}}" required="required">
+    <textarea #description name="description" placeholder="Entrez votre description..." value="{{playlistDescription}}"></textarea>
+    <input type="submit" class="btn btn-info btn-lg btn-block" (click)="putDescriptionToVideo(description.value, title.value, form)" value="Valider">
   </form>
 </div>
 <div class="overlay" ngClass="{{isInteractDescriptionPopinOpen && 'open'}}" (click)="eventCloseDescriptionModal()"></div>
