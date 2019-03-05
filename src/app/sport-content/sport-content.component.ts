@@ -33,15 +33,9 @@ export class SportContentComponent implements OnInit {
     this.responseVideos.subscribe(
       (data: Video[]) => {
         this.sportVideo = data;
-
-        console.log('---------------------------');
-        console.log(this.sportVideo);
       },
       error => {
         console.log(error);
-      },
-      () => {
-        console.log('on complete');
       }
     );
   }

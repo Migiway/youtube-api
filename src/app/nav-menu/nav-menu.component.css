@@ -7,3 +7,7 @@
   background-color: #232323 !important;
   color: #21DEEF!important;
 }
+
+.hide{
+	display: none;
+}

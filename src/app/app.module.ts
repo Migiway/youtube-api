@@ -34,6 +34,7 @@ import {PlaylistsLoggedUserComponent} from './playlists-logged-user/playlists-lo
 import {ConfirmationService, ConfirmDialogModule, MessageService} from 'primeng/primeng';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ToastModule} from 'primeng/toast';
+import { DeviceDetectorModule } from 'ngx-device-detector';
 
 const appRoutes: Routes = [
   {path: 'search', component: SearchComponent},
@@ -81,6 +82,7 @@ const gapiClientConfig: NgGapiClientConfig = {
     ConfirmDialogModule,
     BrowserAnimationsModule,
     ToastModule,
+    DeviceDetectorModule.forRoot(),
     GoogleApiModule.forRoot({
       provide: NG_GAPI_CONFIG,
       useValue: gapiClientConfig

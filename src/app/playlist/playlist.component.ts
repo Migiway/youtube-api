@@ -35,15 +35,9 @@ export class PlaylistComponent implements OnInit {
     this.responseVideos.subscribe(
       (data: Video[]) => {
         this.playlistVideo = data;
-
-        console.log('---------------------------');
-        console.log(this.playlistVideo);
       },
       error => {
         console.log(error);
-      },
-      () => {
-        console.log('on complete');
       }
     );
   }
@@ -58,5 +52,5 @@ export class PlaylistComponent implements OnInit {
     this.isCommentModalOpen = false;
     this.videoCommentId = null;
   }
-  
+
 }

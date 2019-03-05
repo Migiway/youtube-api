@@ -18,9 +18,7 @@ export class PlaylistContentService {
     return this.https
       .get(this.playlistUrlApi)
       .pipe(map((data: any) => {
-        console.log(data);
         const items = data.items;
-        console.log(items);
         const videos = items.map((video) => {
           return {
             title: video.snippet.title,
@@ -28,8 +26,6 @@ export class PlaylistContentService {
             imgUrl : video.snippet.thumbnails.medium.url,
           };
         });
-
-        console.log(videos);
         return videos;
       }));
   }
