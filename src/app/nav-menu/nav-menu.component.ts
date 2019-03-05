@@ -20,9 +20,5 @@ export class NavMenuComponent implements OnInit {
     this.isUserAuthenticated = !!this.apiOauthStorageService.getAuthenticationDataWithKey('access_token');
   }
 
-  activeHomeItem() {this.activeHome = true; }
-  activeSearchItem() {this.activeSearch = !this.activeSearch; }
-  activeGetLogoItem() {this.activeGetLogo = !this.activeGetLogo; }
-  activePlaylistItem() {this.activePlaylist = !this.activePlaylist; }
 
 }
