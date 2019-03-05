@@ -17,7 +17,7 @@
             <h5><a href="https://www.youtube.com/watch?v=bPeJfYSxj20&list={{playlist.id}}" target="_blank" class="title">{{playlist.title}}</a></h5>
             <textarea class="form-control" disabled="disabled"> {{playlist.desc}}</textarea>
             <div class="form-group">
-              <button class="btn btn-success btn-lg btn-block"  (click)="openDescriptionModal(playlist.id, playlist.desc)">Modifier la playlist</button>
+              <button class="btn btn-success btn-lg btn-block"  (click)="openDescriptionModal(playlist.id, playlist.title, playlist.desc)">Modifier la playlist</button>
                 <button (click)="deletePlaylist(playlist.id)">Supprimer cette playlist</button>
             </div>
           </div>
