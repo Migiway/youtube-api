@@ -11,6 +11,7 @@ export class InteractDescriptionModalComponent implements OnInit {
   @Input() isInteractDescriptionPopinOpen: boolean;
   @Input() playlistDescriptionId: string;
   @Input() playlistTitle: string;
+  @Input() playlistDescription: string;
   @Output() closeDescriptionPopin = new EventEmitter<Boolean>();
   constructor(private youtubeDescriptions: YoutubeDescriptionsLoggedInService) { }
   ngOnInit() {

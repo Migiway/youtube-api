@@ -25,6 +25,7 @@
     "core-js": "^2.5.4",
     "gapi": "0.0.3",
     "ng-gapi": "0.0.7",
+    "ngx-ui-loader": "^7.2.1",
     "primeicons": "^1.0.0",
     "primeng": "^7.0.5",
     "rxjs": "~6.3.3",

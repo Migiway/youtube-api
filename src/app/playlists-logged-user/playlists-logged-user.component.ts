@@ -21,6 +21,7 @@ export class PlaylistsLoggedUserComponent implements OnInit {
   playlists: Playlist[];
   playlistDescriptionId: string;
   playlistTitle: string;
+  playlistDescription: string;
   isUserAuthenticated: boolean;
 
 
@@ -41,10 +42,12 @@ export class PlaylistsLoggedUserComponent implements OnInit {
       });
   }
 
- public openDescriptionModal(playlistId: string, playlistTitle: string) {
+ public openDescriptionModal(playlistId: string, playlistTitle: string, playlistDescription: string) {
     this.isDescriptionsModalOpen = true;
     this.playlistDescriptionId = playlistId;
     this.playlistTitle = playlistTitle;
+    this.playlistDescription = playlistDescription;
+
   }
 
   deletePlaylist(playlistId: string) {
