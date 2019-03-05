@@ -20,9 +20,7 @@ export class AuthService {
       gapi.load('client:auth2', this.loadCallbackGoogleApi);
     });
   }
-  loadCallbackGoogleApi() {
-    console.log('callback loaded');
-  }
+  loadCallbackGoogleApi() {}
   signIn(successCallback, errorCallback) {
     this.googleAuth.getAuth()
       .subscribe((auth) => {
@@ -42,4 +40,3 @@ export class AuthService {
   }
 
 }
-

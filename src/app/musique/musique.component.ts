@@ -33,15 +33,9 @@ export class MusiqueComponent implements OnInit {
     this.responseVideos.subscribe(
       (data: Video[]) => {
         this.musiqueVideo = data;
-
-        console.log('---------------------------');
-        console.log(this.musiqueVideo);
       },
       error => {
         console.log(error);
-      },
-      () => {
-        console.log('on complete');
       }
     );
   }
