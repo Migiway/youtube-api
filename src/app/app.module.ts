@@ -40,7 +40,8 @@ const appRoutes: Routes = [
   {path: 'get-logo', component: GetLogoComponent},
   {path: 'get-logo', component: GetLogoComponent},
   {path: 'playlists', component: PlaylistsLoggedUserComponent},
-  {path: '', component: HomeComponent },
+  {path: 'home', component: HomeComponent },
+  {path: '', redirectTo: 'home',  pathMatch: 'full'},
 ];
 
 const gapiClientConfig: NgGapiClientConfig = {
