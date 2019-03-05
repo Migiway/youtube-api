@@ -2,9 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {Observable} from 'rxjs';
 import {PlaylistsLoggedUserService} from '../../service/playlists-logged-user/playlists-logged-user.service';
 import {Playlist} from '../../model/Playlist';
-import {GoogleApiOauthStorageService} from '../../service/storage/google-api-oauth-storage.service';
-import {YoutubeDescriptionsLoggedInService} from '../../service/descriptions/youtube-descriptions-logged-in.service';
-import {GoogleAuthService} from 'ng-gapi';
 
 import {ConfirmationService, MessageService} from 'primeng/api';
 

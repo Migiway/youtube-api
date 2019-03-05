@@ -49,3 +49,16 @@
   width: 100vw;
   height: 100vh;
 }
+
+.rate{
+  width: 50%;
+  margin: 0 auto;
+}
+
+.fas{
+  margin: 15px;
+}
+
+.fas:hover{
+  color: #21DEEF;
+}

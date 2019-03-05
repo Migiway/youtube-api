@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import {Subject} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -7,7 +8,8 @@ import {HttpClient} from '@angular/common/http';
 
 export class YoutubeDescriptionsLoggedInService {
   youtubeDescriptionsBaseUrl = 'https://www.googleapis.com/youtube/v3/playlists';
- 
+  private _refreshSuccesDescription$ = new Subject<any>();
+  onSuccessDescription = this._refreshSuccesDescription$.asObservable();
   constructor(private httpClient: HttpClient) { }
 
   putDescriptionsForVideoId(playlistId: string, descriptionText: string, titleText: string): Promise<any> {
@@ -23,7 +25,11 @@ export class YoutubeDescriptionsLoggedInService {
           'part': 'snippet',
           key: 'AIzaSyBnRWLy2jjb9Cpyadm3plaPd__94gJEGzo',
         },
-      }).subscribe(res => resolve(res), err => reject(err));
+      }).subscribe(res => {
+        this._refreshSuccesDescription$.next(res);
+        resolve(res);
+      },
+          err => reject(err));
     });
   }
 }

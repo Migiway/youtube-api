@@ -33,6 +33,13 @@
   margin: 0 auto;
 }
 
+.description-popin button{
+  display: block;
+  margin: 0 auto;
+  width: 50%;
+  font-size: 12px;
+}
+
 .overlay {
   position: fixed;
   z-index: 1040;
