@@ -33,13 +33,13 @@ ng serve
 
 **Se connecter avec son compte youtube (en haut a droite pour avoir accès à l'ensemble des fonctionnalités**
 
-##Page D'accueil
+## Page D'accueil
 Affiche des playlists en dur et permet de les commenter.
 
-##Recherche
+## Recherche
 Permet de rechercher des videos en tapant une chaine de caractères dans la barre de recherche.
 
-##Obtenir un logo
+## Obtenir un logo
 Permet d'afficher le logo d'une chaine youtube en tapant son slug dans la barre de recherche et de se faire rediriger sur la chaine en question lors d'un clique sur le bouton.
 
 ##Playlists
