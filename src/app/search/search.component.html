@@ -2,15 +2,25 @@
 <app-header></app-header>
 <app-nav-menu></app-nav-menu>
 
-<div id="navbar" class="navbar-collapse collapse">
-  <div class="top-search">
-    <form class="navbar-form navbar-right">
-      <input #search type="text" class="form-control" placeholder="Recherche..." (keyup.enter)="getVideos(search.value)">
-      <input type="submit" value=" " (click)="getVideos(search.value)">
-    </form>
+
+
+<div class="col-sm-12 col-sm-offset-4 col-md-10 col-md-offset-2 col-sm-offset-0 main">
+  <div class="main-grids">
+    <div class="recommended">
+      <div class="recommended-grids">
+        <div id="navbar" class="navbar">
+          <div class="top-search">
+            <form class="navbar-form navbar-right">
+              <input #search type="text" class="form-control" placeholder="Recherche..." (keyup.enter)="getVideos(search.value)">
+              <input type="submit" value=" " (click)="getVideos(search.value)">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
-<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-12 col-md-offset-2 main">
+<div class="col-sm-12 col-sm-offset-4 col-md-10 col-md-offset-2 col-sm-offset-0 main">
   <div class="main-grids">
     <div class="recommended">
       <div class="recommended-grids">
@@ -19,9 +29,9 @@
         </div>
         <ng-template #searchExist>
           <div class="recommended-info">
-            <h3>Resultat de votre recherche : {{search.value}}</h3>
+            <h3>Résultats de votre recherche : {{search.value}}</h3>
           </div>
-          <div class="col-md-3 resent-grid recommended-grid" *ngFor="let video of searchedVideos">
+          <div class="col-md-4 resent-grid recommended-grid" id="display-video" *ngFor="let video of searchedVideos">
             <div class="resent-grid-img recommended-grid-img">
               <a href="https://www.youtube.com/watch?v={{video.id.videoId}}" target="_blank">
                 <img [src]="video.snippet.thumbnails.high.url" alt="" />
@@ -29,8 +39,8 @@
             </div>
             <div class="resent-grid-info recommended-grid-info video-info-grid">
               <h5><a href="https://www.youtube.com/watch?v={{video.id.videoId}}" target="_blank"class="title">{{video.snippet.title}}</a></h5>
-              <i class="far fa-comment fa-2x" *ngIf="isUserAuthenticated" (click)="openCommentModal(video.id.videoId, video.snippet.title)"></i>
-              <p class="rating" *ngIf="isUserAuthenticated" (click)="openRateModal(video.id.videoId, video.snippet.title)">Vous aimez?</p>
+              <i class="far fa-comment fa-2x" id="modal-comment" *ngIf="isUserAuthenticated" (click)="openCommentModal(video.id.videoId, video.snippet.title)"></i>
+              <p class="rating" id="modal-like" *ngIf="isUserAuthenticated" (click)="openRateModal(video.id.videoId, video.snippet.title)">Vous aimez?</p>
             </div>
           </div>
           <nav aria-label="Page navigation example">

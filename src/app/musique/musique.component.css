@@ -5,3 +5,11 @@ color: #21DEEF;
 .fa-comment{
 color: #272c2e;
 }
+
+#video-display{
+  margin-bottom: 5%;
+}
+
+#modal-comment{
+  padding-top: 20px;
+}

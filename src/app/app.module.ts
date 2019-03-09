@@ -3,7 +3,6 @@ import {NgModule} from '@angular/core';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {DisplayInfoComponent} from './display-info/display-info.component';
 import {FormsModule} from '@angular/forms';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {HeaderComponent} from './header/header.component';
@@ -16,8 +15,6 @@ import {SportContentService} from '../service/sport/sport-content.service';
 import {MusiqueContentService} from '../service/musique/musique-content.service';
 import {PlaylistComponent} from './playlist/playlist.component';
 import {PlaylistContentService} from '../service/playlist/playlist-content.service';
-import {ChannelComponent} from './channel/channel.component';
-import {ChannelService} from '../service/channel/channel.service';
 import {RouterModule, Routes} from '@angular/router';
 import {SearchComponent} from './search/search.component';
 import {HomeComponent} from './home/home.component';
@@ -57,14 +54,12 @@ const gapiClientConfig: NgGapiClientConfig = {
 @NgModule({
   declarations: [
     AppComponent,
-    DisplayInfoComponent,
     HeaderComponent,
     FooterComponent,
     TendancesComponent,
     MusiqueComponent,
     NavMenuComponent,
     SportContentComponent,
-    ChannelComponent,
     PlaylistComponent,
     SearchComponent,
     HomeComponent,
@@ -96,7 +91,6 @@ const gapiClientConfig: NgGapiClientConfig = {
     SportContentService,
     MusiqueContentService,
     PlaylistContentService,
-    ChannelService,
     SearchService,
     GetLogoService,
     AuthService,

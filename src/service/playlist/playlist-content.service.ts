@@ -8,7 +8,7 @@ import {map} from 'rxjs/operators';
 })
 export class PlaylistContentService {
 
-  playlistUrlApi = 'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=4' +
+  playlistUrlApi = 'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=6' +
     '&playlistId=PL-7xFS_1Uz6KK8b-7J9SCNZi4VzNoMeXU&key=AIzaSyBnRWLy2jjb9Cpyadm3plaPd__94gJEGzo';
 
 

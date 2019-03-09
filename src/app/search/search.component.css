@@ -29,3 +29,14 @@ p:hover{
 @media (min-width: 768px) {
   
 }
+
+#display-video{
+  margin-bottom: 5%;
+}
+
+#modal-like{
+  padding-top: 20px;
+}
+#modal-comment{
+  padding-top: 20px;
+}
