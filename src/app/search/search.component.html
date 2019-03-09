@@ -30,13 +30,13 @@
             <div class="resent-grid-info recommended-grid-info video-info-grid">
               <h5><a href="https://www.youtube.com/watch?v={{video.id.videoId}}" target="_blank"class="title">{{video.snippet.title}}</a></h5>
               <i class="far fa-comment fa-2x" *ngIf="isUserAuthenticated" (click)="openCommentModal(video.id.videoId, video.snippet.title)"></i>
-              <p class="rating" *ngIf="isUserAuthenticated" (click)="openRateModal(video.id.videoId, video.snippet.title)">LIKE/DISLIKE</p>
+              <p class="rating" *ngIf="isUserAuthenticated" (click)="openRateModal(video.id.videoId, video.snippet.title)">Vous aimez?</p>
             </div>
           </div>
           <nav aria-label="Page navigation example">
             <ul class="pagination">
-              <li class="page-item"><a class="page-link" (click)="getPreviousPageVideos(search.value)">Previous</a></li>
-              <li class="page-item"><a class="page-link" (click)="getNextPageVideos(search.value)">Next</a></li>
+              <li class="page-item"><a class="page-link" (click)="getPreviousPageVideos(search.value)">Précécent</a></li>
+              <li class="page-item"><a class="page-link" (click)="getNextPageVideos(search.value)">Suivant</a></li>
             </ul>
           </nav>
           <div class="clearfix"> </div>
