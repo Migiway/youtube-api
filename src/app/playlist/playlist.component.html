@@ -5,7 +5,7 @@
         <div class="recommended-info">
           <h3>Playlist Perso</h3>
         </div>
-        <div class="col-md-3 resent-grid recommended-grid" *ngFor="let video of playlistVideo">
+        <div class="col-md-3 col-sm-4 resent-grid recommended-grid" *ngFor="let video of playlistVideo">
           <div class="resent-grid-img recommended-grid-img">
             <a href="https://www.youtube.com/watch?v={{video.link}}" target="_blank">
               <img src="{{video.imgUrl}}" alt="" />
@@ -30,4 +30,3 @@
   [videoTitle]="videoTitle"
 >
 </app-interact-comment-modal>
-

@@ -2018,8 +2018,8 @@ background: url(../images/social.png) no-repeat 0px 0px;
     width: 100%;
   }
   .recommended-grid {
-      float: left;
-    width: 25%;
+    float: left;
+    width: 33%;
     margin-bottom: 2em;
   }
   .slider-top-grids {
@@ -2239,7 +2239,6 @@ background: url(../images/social.png) no-repeat 0px 0px;
   a.navbar-brand {
       display: block;
     text-align: center !important;
-    width: 25%;
     margin: 0 auto 1em auto;
     padding: 0;
   }
@@ -2268,9 +2267,8 @@ background: url(../images/social.png) no-repeat 0px 0px;
       float: none;
   }
   a.navbar-brand {
-      display: block;
+    display: block;
     text-align: center !important;
-    width: 25%;
     margin: 0 auto 1em auto;
     padding: 0;
   }
@@ -2502,9 +2500,9 @@ background: url(../images/social.png) no-repeat 0px 0px;
   }
 }
 @media (max-width: 320px) {
-  a.navbar-brand {
+  /* a.navbar-brand {
     width: 35%;
-  }
+  } */
   form.navbar-form.navbar-right {
     width: 100%;
     margin: 0;

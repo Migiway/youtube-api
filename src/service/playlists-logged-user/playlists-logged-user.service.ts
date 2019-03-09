@@ -19,9 +19,7 @@ export class PlaylistsLoggedUserService {
     return this.https
       .get(this.getOwnerPlaylistsUrl)
       .pipe(map((data: any) => {
-        console.log(data);
         const items = data.items;
-        console.log(items);
         const playlists = items.map((playlist) => {
           return {
             id: playlist.id,
@@ -30,7 +28,6 @@ export class PlaylistsLoggedUserService {
             img: playlist.snippet.thumbnails.medium.url
           };
         });
-        console.log(playlists);
         return playlists;
       }));
   }

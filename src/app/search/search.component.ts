@@ -58,7 +58,6 @@ export class SearchComponent implements OnInit {
       searchInput + '&type=video&videoCaption=any&key=AIzaSyBnRWLy2jjb9Cpyadm3plaPd__94gJEGzo&maxResults=8')
       .subscribe((response: Array<Object>) => {
         this.searchedVideos = response['items'];
-        console.log(this.searchedVideos);
         this.nextPage = response['nextPageToken'];
         this.searchedVideos.forEach(element => {
           this.dangerousVideoUrl = 'http://www.youtube.com/embed/' + element['id']['videoId'] +
