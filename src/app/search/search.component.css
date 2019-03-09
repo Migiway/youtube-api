@@ -13,7 +13,7 @@ p {
 .rating{
   float: right;
   margin: 0 auto;
-      cursor: pointer;
+  cursor: pointer;
 }
 
 p:hover{
@@ -21,13 +21,8 @@ p:hover{
   font-weight: bold;
 }
 
-
 .recommended {
   margin-top: -5%;
-}
-
-@media (min-width: 768px) {
-
 }
 
 #display-video{
@@ -42,9 +37,16 @@ p:hover{
 }
 
 .recommended-info h3 {
-    margin-top: -8%;
+    margin-top: -10%;
 }
 
+.top-search form input[type="submit"] {
+  margin-top: 8%;
+  margin-left: 25%;
+}
+.top-search form input[type="text"] {
+  margin-left: 40%;
+}
 @media (max-width: 991px){
   .recommended-info h3 {
     margin-top: -10%
@@ -56,7 +58,8 @@ p:hover{
     margin-left: 90%;
   }
   .top-search form input[type="submit"] {
-    margin-left: 85%;
+    margin-left: 80%;
+    top: 8px;
   }
 }
 @media (max-width: 480px){
