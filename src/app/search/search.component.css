@@ -27,7 +27,7 @@ p:hover{
 }
 
 @media (min-width: 768px) {
-  
+
 }
 
 #display-video{
@@ -39,4 +39,32 @@ p:hover{
 }
 #modal-comment{
   padding-top: 20px;
+}
+
+.recommended-info h3 {
+    margin-top: -8%;
+}
+
+@media (max-width: 991px){
+  .recommended-info h3 {
+    margin-top: -10%
+  }
+}
+@media (max-width: 768px){
+  .top-search form input[type="text"] {
+    width: 130%;
+    margin-left: 90%;
+  }
+  .top-search form input[type="submit"] {
+    margin-left: 85%;
+  }
+}
+@media (max-width: 480px){
+  .top-search form input[type="text"] {
+    width: 150%;
+    margin-left: 80%;
+  }
+  .top-search form input[type="submit"] {
+    top: 15px;
+  }
 }
