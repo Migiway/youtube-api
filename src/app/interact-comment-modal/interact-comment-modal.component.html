@@ -1,8 +1,11 @@
 <div class="comment-popin" ngClass="{{isInteractCommentPopinOpen && 'open'}}">
-  <h2>Commentaire pour : {{videoTitle}}</h2>
+  <h2>{{videoTitle}}</h2>
+  <hr>
   <form id="form" #form>
-    <textarea #comment name="comment" placeholder="Entrez votre commentaire..."></textarea>
-    <button type="button" class="btn btn-default" (click)="postCommentToVideo(comment.value, form)">Envoyer le commentaire</button>
+    <div class="form-group">
+      <textarea #comment name="comment" class="form-control" placeholder="Entrez votre commentaire..."></textarea>
+      <button type="button" class="btn btn-default add-comment" (click)="postCommentToVideo(comment.value, form)">Envoyer le commentaire</button>
+    </div>
   </form>
 </div>
 <div class="overlay" ngClass="{{isInteractCommentPopinOpen && 'open'}}" (click)="eventCloseCommentModal()"></div>
