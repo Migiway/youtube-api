@@ -3,6 +3,7 @@
 
 
 
+# FRANCAIS
 
 API-YOUTUBE est une application web développée avec l'API de youtube et Angular 7
 
@@ -49,10 +50,49 @@ Supprimer la playlist.
 
 
 
-## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+# ENGLISH
 
-Please make sure to update tests as appropriate.
+API-YOUTUBE an angular application which allows to search a video on youtube or a channel. It displays also the logged person's playlists.
 
-## License
-[MIT](url)
+## Requirement
+- node.js
+- Youtube account with personal playlists
+
+## Installation
+
+- Download the project on github or clone it : git@github.com:tomsmartin/youtube-api.git
+- In command, change directory : 
+```bash
+cd PROJECT-PATH
+```
+- Then install the package : npm install
+
+```bash
+npm install
+```
+
+## Usage
+Run the server :
+```python
+ng serve
+```
+
+**Login with a Youtube Account to have access to all functionalities**
+
+## Home Page
+Displays playlists and you can comment the videos
+
+## Search
+Search videos on Youtube
+
+## Get logo
+Search channel on Youtube, displays the logo and you can direct acces to this channel with the url.
+
+##Playlists
+Display the logged person's playlists.
+Can edit the title and/or the description.
+Delete a playlist playlist.
+
+
+
+
