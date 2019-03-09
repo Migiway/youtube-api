@@ -1,0 +1,13 @@
+.git-hub {
+	font-size: 35px;
+	color: #fff;
+}
+
+.active-item {
+  background-color: #232323 !important;
+  color: #21DEEF!important;
+}
+
+.hide{
+	display: none;
+}

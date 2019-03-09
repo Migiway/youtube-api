@@ -1,0 +1,32 @@
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+  <div class="main-grids">
+    <div class="recommended">
+      <div class="recommended-grids">
+        <div class="recommended-info">
+          <h3>Playlist RAP</h3>
+        </div>
+        <div class="col-md-3 col-sm-4 resent-grid recommended-grid" *ngFor="let video of playlistVideo">
+          <div class="resent-grid-img recommended-grid-img">
+            <a href="https://www.youtube.com/watch?v={{video.link}}" target="_blank">
+              <img src="{{video.imgUrl}}" alt="" />
+            </a>
+          </div>
+          <div class="resent-grid-info recommended-grid-info video-info-grid">
+            <h5><a href="https://www.youtube.com/watch?v={{video.link}}" target="_blank"class="title">{{video.title}}</a></h5>
+            <i class="far fa-comment fa-2x" *ngIf="isUserAuthenticated" (click)="openCommentModal(video.link, video.title)"></i>
+            <p class="rating" *ngIf="isUserAuthenticated" (click)="openRateModal(video.id.videoId, video.snippet.title)">LIKE/DISLIKE</p>
+          </div>
+        </div>
+        <div class="clearfix"> </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-interact-comment-modal
+  (closeCommentPopin)="closeCommentModal()"
+  [isInteractCommentPopinOpen]="isCommentModalOpen"
+  [videoCommentId]="videoCommentId"
+  [videoTitle]="videoTitle"
+>
+</app-interact-comment-modal>

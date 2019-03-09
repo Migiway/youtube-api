@@ -1,0 +1,64 @@
+.comment-popin {
+  position: fixed;
+  z-index: 1041;
+  top: -110vh;
+  left: calc(50% - 150px);
+  width: 300px;
+  height: 200px;
+  background-color: white;
+}
+
+.comment-popin.open {
+  top: calc(50% - 100px);
+}
+
+.comment-popin textarea {
+  margin: 10px auto;
+  display: block;
+  width: 90%;
+  resize: none;
+  height: 50px;
+}
+
+.comment-popin h2 {
+  width: 90%;
+  text-align: center;
+  margin: 10px auto;
+  font-size: 10px;
+}
+
+.comment-popin input{
+  display: block;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.overlay {
+  position: fixed;
+  z-index: 1040;
+  width: 0;
+  height: 0;
+  top: 0;
+  left: 0;
+  background-color: black;
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.overlay.open {
+  width: 100vw;
+  height: 100vh;
+}
+
+.rate{
+  width: 50%;
+  margin: 0 auto;
+}
+
+.fas{
+  margin: 15px;
+}
+
+.fas:hover{
+  color: #21DEEF;
+}

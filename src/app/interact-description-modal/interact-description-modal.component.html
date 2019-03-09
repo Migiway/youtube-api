@@ -1,0 +1,16 @@
+<div class="description-popin" ngClass="{{isInteractDescriptionPopinOpen && 'open'}}">
+  <h2>Modification de la playlist {{playlistTitle}} </h2>
+  <hr>
+  <form id="form" #form>
+    <div class="form-group">
+      <label for="titreplaylist">Titre</label>
+      <input #title type="text" name="title" class="form-control" id="titreplaylist" placeholder="Titre de la playlist" value="{{playlistTitle}}">
+    </div>
+    <div class="form-group">
+      <label class="description" for="descriptionlaylist">Description</label>
+      <textarea #description name="description" class="form-control" id="descriptionlaylist" placeholder="Entrez votre description..." value="{{playlistDescription}}"></textarea>
+    </div>
+    <button type="button" class="btn btn-default update-playlist" (click)="putDescriptionToVideo(description.value, title.value, form)">Envoyer la description</button>
+  </form>
+</div>
+<div class="overlay" ngClass="{{isInteractDescriptionPopinOpen && 'open'}}" (click)="eventCloseDescriptionModal()"></div>

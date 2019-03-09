@@ -1,0 +1,31 @@
+p {
+  margin: 10px;
+}
+
+.fa-comment:hover{
+  color: #21DEEF;
+}
+
+.fa-comment{
+  color: #272c2e;
+}
+
+.rating{
+  float: right;
+  margin: 0 auto;
+      cursor: pointer;
+}
+
+p:hover{
+  color: #21DEEF;
+  font-weight: bold;
+}
+
+
+.recommended {
+  margin-top: -5%;
+}
+
+@media (min-width: 768px) {
+  
+}

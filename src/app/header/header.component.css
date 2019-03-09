@@ -1,0 +1,17 @@
+.btn-login{
+  color: #ffffff;
+  background-color: #272c2e;
+  border: none;
+}
+
+.btn-login:hover{
+  color: #21DEEF;
+}
+
+.name-user{
+  font-size: 12px;
+}
+
+.navbar-inverse .navbar-brand:hover{
+  color:#21DEEF;background-color:transparent
+}

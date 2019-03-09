@@ -1,0 +1,27 @@
+<div class="col-sm-3 col-md-2 sidebar">
+	<div class="top-navigation">
+		<div class="t-menu">MENU</div>
+		<div class="t-img">
+			<img src="assets/images/lines.png" alt="" (click)="menuOpenClose()"/>
+		</div>
+		<div class="clearfix"> </div>
+	</div>
+	<div id="menu" (window:resize)="onResize($event)" class="drop-navigation drop-navigation">
+	  <ul class="nav nav-sidebar">
+		<li><a routerLink="/home" routerLinkActive="active-item" class="home-icon"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Accueil</a></li>
+		<li><a routerLink="/search" routerLinkActive="active-item" class="search-icon"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>Rechercher</a></li>
+		<li><a routerLink="/get-logo" routerLinkActive="active-item" class="user-icon"><span class="glyphicon glyphicon-home glyphicon-picture" aria-hidden="true"></span>Obtenir un logo</a></li>
+		<li *ngIf="isUserAuthenticated"><a routerLink="/playlists" routerLinkActive="active-item" class="user-icon"><span class="glyphicon glyphicon-th" aria-hidden="true"></span>Playlists</a></li>
+	  </ul>
+		<div class="side-bottom">
+			<div class="side-bottom-icons">
+				<ul class="nav2">
+					<li><a href="https://github.com/tomsmartin/youtube-api" class="git-hub" target="_blank"><i class="fab fa-github"></i> </a></li>
+				</ul>
+			</div>
+			<div class="copyright">
+				<p>Copyright © 2019 Youtube-API. Tous Droits Réservés | Réalisé par Hedi - Sofiane - Thomas</p>
+			</div>
+		</div>
+	</div>
+</div>

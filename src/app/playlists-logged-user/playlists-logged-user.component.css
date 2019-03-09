@@ -1,0 +1,17 @@
+textarea{
+  resize: none;
+}
+
+button{
+  margin-top: 10px;
+  background-color: #272c2e;
+  font-size: 12px;
+  border: none;
+  color: #fff;
+}
+
+button:hover{
+  color : #21DEEF;
+  background-color: #272c2e;
+}
+
