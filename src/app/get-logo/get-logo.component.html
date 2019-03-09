@@ -9,8 +9,8 @@
         <div id="navbar" class="navbar">
           <div class="top-search">
             <form class="navbar-form navbar-right">
-      <input #searchChaine type="text" class="form-control" placeholder="Rechercher une chaîne..." (keyup.enter)="getChannel(searchChaine.value)">
-      <input type="submit" value=" " (click)="getChannel(searchChaine.value)">
+              <input #searchChaine type="text" class="form-control" placeholder="Rechercher une chaîne..." (keyup.enter)="getChannel(searchChaine.value)">
+              <input type="submit" value=" " (click)="getChannel(searchChaine.value)">
             </form>
           </div>
         </div>
@@ -29,16 +29,14 @@
           <div class="recommended-info">
             <h3>Resultat de votre recherche : {{searchChaine.value}}</h3>
           </div>
-          <div class="col-md-9 resent-grid recommended-grid">
-            <div class="resent-grid-img recommended-grid-img">
-              <img [src]="responseChannel.imgUrl" alt="" />
-            </div>
+          <div class="col-sm-offset-4 col-xs-offset-3 resent-grid recommended-grid">
             <div class="resent-grid-info recommended-grid-info video-info-grid">
-              <h5>{{responseChannel.title}}</h5>
-              <p><a href="https://www.youtube.com/user/{{searchChaine.value}}" target="_blank">Chaîne Youtube </a></p>
+              <h3 class="channel-title">{{responseChannel.title}}</h3>
             </div>
-            <div class="">
-              <a href="{{responseChannel.imgUrl}}" download>Télécharger le logo</a>
+            <div class="resent-grid-img recommended-grid-img result-channel">
+              <img [src]="responseChannel.imgUrl" alt="" class="result-logo" />
+              <a class="btn btn-lg btn-block" href="https://www.youtube.com/user/{{searchChaine.value}}" target="_blank">Chaîne Youtube </a>
+              <a class="btn btn-lg btn-block" href="{{responseChannel.imgUrl}}" target="_blank" download>Télécharger le logo</a>
             </div>
           </div>
           <div class="clearfix"> </div>
