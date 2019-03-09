@@ -3,9 +3,11 @@
   z-index: 1041;
   top: -110vh;
   left: calc(50% - 150px);
-  width: 300px;
-  height: 200px;
+  width: 55%;
+  height: 30%;
+  border-radius: 5px;
   background-color: white;
+  margin-left: -15%;
 }
 
 .comment-popin.open {
@@ -21,10 +23,11 @@
 }
 
 .comment-popin h2 {
-  width: 90%;
+  width: 100%;
   text-align: center;
   margin: 10px auto;
-  font-size: 10px;
+  font-size: 20px;
+  color: #BBBBBB;
 }
 
 .comment-popin input{
@@ -51,7 +54,7 @@
 }
 
 .rate{
-  width: 50%;
+  width: 30%;
   margin: 0 auto;
 }
 
@@ -60,5 +63,51 @@
 }
 
 .fas:hover{
+  cursor: pointer;
   color: #21DEEF;
+}
+
+@media (max-width: 991px){
+  .comment-popin{
+    width: 85%;
+    margin-left: -27%;
+    height: 30%;
+  }
+  .comment-popin textarea {
+    margin-bottom: 3%;
+  }
+  .comment-popin.open {
+    top: calc(50% - 150px);
+  }
+  .container.rate {
+    width: 20%;
+  }
+}
+@media (max-width: 768px){
+  .comment-popin{
+    width: 85%;
+    margin-left: -23%;
+    height: 30%;
+  }
+  .comment-popin textarea {
+    width: 90%;
+    margin-left: 20px;
+    margin-bottom: 5%;
+  }
+  .container.rate {
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+}
+@media (max-width: 480px){
+  .comment-popin{
+    margin-left: -10%;
+    height: 30%;
+  }
+  .comment-popin textarea {
+    margin-bottom: 10%;
+  }
+  .container.rate {
+    width: 30%;
+  }
 }
