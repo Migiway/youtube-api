@@ -3,13 +3,15 @@
   z-index: 1041;
   top: -110vh;
   left: calc(50% - 150px);
-  width: 300px;
-  height: 200px;
+  width: 50%;
+  height: 35%;
+  margin-left: -10%;
+  border-radius: 5px;
   background-color: white;
 }
 
 .comment-popin.open {
-  top: calc(50% - 100px);
+  top: calc(50% - 250px);
 }
 
 .comment-popin textarea {
@@ -17,14 +19,16 @@
   display: block;
   width: 90%;
   resize: none;
-  height: 50px;
+  height: 80px;
+  margin-bottom: 3%;
 }
 
 .comment-popin h2 {
-  width: 90%;
+  width: 100%;
   text-align: center;
+  font-size: 20px;
   margin: 10px auto;
-  font-size: 10px;
+  color: #BBBBBB;
 }
 
 .comment-popin button{
@@ -48,4 +52,43 @@
 .overlay.open {
   width: 100vw;
   height: 100vh;
+}
+
+.add-comment:hover{
+  background-color: #fff;
+  border-color: #21DEEF;
+}
+
+@media (max-width: 991px){
+  .comment-popin{
+    width: 85%;
+    margin-left: -27%;
+    height: 40%;
+  }
+  .comment-popin textarea {
+    margin-bottom: 3%;
+  }
+  .comment-popin.open {
+    top: calc(50% - 150px);
+  }
+}
+@media (max-width: 768px){
+  .comment-popin{
+    width: 85%;
+    margin-left: -23%;
+  }
+  .comment-popin textarea {
+    width: 90%;
+    margin-left: 20px;
+    margin-bottom: 5%;
+  }
+}
+@media (max-width: 480px){
+  .comment-popin{
+    margin-left: -10%;
+    height: 50%;
+  }
+  .comment-popin textarea {
+    margin-bottom: 10%;
+  }
 }
