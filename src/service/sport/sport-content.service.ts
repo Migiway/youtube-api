@@ -7,7 +7,7 @@ import {map} from 'rxjs/operators';
 @Injectable()
 export class SportContentService {
 
-  sportUrlApi = 'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=4' +
+  sportUrlApi = 'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=3' +
     '&playlistId=PLIN0y6TbDGWwestC9ZblrwgR7N8CuINYN&key=AIzaSyBnRWLy2jjb9Cpyadm3plaPd__94gJEGzo';
 
 

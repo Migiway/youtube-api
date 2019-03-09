@@ -1,9 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {DomSanitizer} from '@angular/platform-browser';
-import {YoutubeCommentsLoggedInService} from '../../service/comments/youtube-comments-logged-in.service';
-import {GoogleAuthService} from 'ng-gapi';
 import {GoogleApiOauthStorageService} from '../../service/storage/google-api-oauth-storage.service';
+import {SearchService} from '../../service/search/search.service';
 
 @Component({
   selector: 'app-search',
@@ -27,7 +26,8 @@ export class SearchComponent implements OnInit {
   constructor(
     private https: HttpClient,
     private domSanitizer: DomSanitizer,
-    private youtubeAuthService: GoogleApiOauthStorageService) { }
+    private youtubeAuthService: GoogleApiOauthStorageService,
+    private searchService: SearchService) { }
 
   ngOnInit() {
     this.isUserAuthenticated = !!this.youtubeAuthService.getAuthenticationDataWithKey('access_token');
@@ -55,7 +55,7 @@ export class SearchComponent implements OnInit {
     searchInput = searchInput.replace('', '%7C');
     this.search = searchInput;
     this.https.get('https://www.googleapis.com/youtube/v3/search?part=snippet&q=' +
-      searchInput + '&type=video&videoCaption=any&key=AIzaSyBnRWLy2jjb9Cpyadm3plaPd__94gJEGzo&maxResults=8')
+      searchInput + '&type=video&videoCaption=any&key=AIzaSyBnRWLy2jjb9Cpyadm3plaPd__94gJEGzo&maxResults=9')
       .subscribe((response: Array<Object>) => {
         this.searchedVideos = response['items'];
         this.nextPage = response['nextPageToken'];
