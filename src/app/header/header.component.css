@@ -11,3 +11,7 @@
 .name-user{
   font-size: 12px;
 }
+
+.navbar-inverse .navbar-brand:hover{
+  color:#21DEEF;background-color:transparent
+}

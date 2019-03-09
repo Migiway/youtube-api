@@ -30,7 +30,6 @@ export class PlaylistsLoggedUserComponent implements OnInit {
     this.responsePlaylists = this.playlistsLoggedUserService.getPlaylists();
     this.responsePlaylists.subscribe((data: Playlist[]) => {
       this.playlists = data;
-      console.log(this.playlists);
     }, error => {
         this.messageService.add({severity: 'error', summary: 'Playlist', detail: 'Les playlists n\'ont pas été chargées'});
       },

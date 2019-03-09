@@ -39,7 +39,7 @@ export class NavMenuComponent implements OnInit {
   public onResize(event) {
     var width = event.target.innerWidth;
     var menu = document.getElementById("menu");
-    if(width < 801){
+    if(width < 992){
       if( menu.classList.contains('hide') === false){
         menu.classList.add("hide");
       }

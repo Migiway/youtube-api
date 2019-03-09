@@ -20,14 +20,12 @@ export class GetLogoComponent implements OnInit {
   }
 
   public getChannel(searchChaine: string) {
-    console.log(this.getLogoService.getChannel(searchChaine));
     this.getLogoService.getChannel(searchChaine)
       .then(res => {
         this.responseChannel = {
           title: res.items[0].snippet.localized.title,
           imgUrl: res.items[0].snippet.thumbnails.high.url,
         };
-        console.log(res.items[0]);
       })
       .catch(err => console.log(err));
   }
