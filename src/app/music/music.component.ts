@@ -1,16 +1,16 @@
 import {Component, OnInit} from '@angular/core';
 import {Observable} from 'rxjs';
 import {Video} from '../../model/Video';
-import {MusiqueContentService} from '../../service/musique/musique-content.service';
+import {MusicContentService} from '../../service/music/music-content.service';
 import {GoogleApiOauthStorageService} from '../../service/storage/google-api-oauth-storage.service';
 
 @Component({
   selector: 'app-musique',
-  templateUrl: './musique.component.html',
-  styleUrls: ['./musique.component.css'],
-  providers : [MusiqueContentService]
+  templateUrl: './music.component.html',
+  styleUrls: ['./music.component.css'],
+  providers : [MusicContentService]
 })
-export class MusiqueComponent implements OnInit {
+export class MusicComponent implements OnInit {
 
   responseVideos: Observable<any> ;
   musiqueVideo: Video[];
@@ -23,7 +23,7 @@ export class MusiqueComponent implements OnInit {
 
 
 
-  constructor( private musiqueContentService: MusiqueContentService, private youtubeAuthService: GoogleApiOauthStorageService) {
+  constructor(private musiqueContentService: MusicContentService, private youtubeAuthService: GoogleApiOauthStorageService) {
   }
 
   ngOnInit(): void {

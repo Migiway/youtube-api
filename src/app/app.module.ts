@@ -8,11 +8,11 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {HeaderComponent} from './header/header.component';
 import {FooterComponent} from './footer/footer.component';
 import {TendancesComponent} from './tendances/tendances.component';
-import {MusiqueComponent} from './musique/musique.component';
+import {MusicComponent} from './music/music.component';
 import {NavMenuComponent} from './nav-menu/nav-menu.component';
 import {SportContentComponent} from './sport-content/sport-content.component';
 import {SportContentService} from '../service/sport/sport-content.service';
-import {MusiqueContentService} from '../service/musique/musique-content.service';
+import {MusicContentService} from '../service/music/music-content.service';
 import {PlaylistComponent} from './playlist/playlist.component';
 import {PlaylistContentService} from '../service/playlist/playlist-content.service';
 import {RouterModule, Routes} from '@angular/router';
@@ -57,7 +57,7 @@ const gapiClientConfig: NgGapiClientConfig = {
     HeaderComponent,
     FooterComponent,
     TendancesComponent,
-    MusiqueComponent,
+    MusicComponent,
     NavMenuComponent,
     SportContentComponent,
     PlaylistComponent,
@@ -89,7 +89,7 @@ const gapiClientConfig: NgGapiClientConfig = {
   ],
   providers: [
     SportContentService,
-    MusiqueContentService,
+    MusicContentService,
     PlaylistContentService,
     SearchService,
     GetLogoService,
