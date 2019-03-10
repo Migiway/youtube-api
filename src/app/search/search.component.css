@@ -13,7 +13,7 @@ p {
 .rating{
   float: right;
   margin: 0 auto;
-      cursor: pointer;
+  cursor: pointer;
 }
 
 p:hover{
@@ -21,11 +21,53 @@ p:hover{
   font-weight: bold;
 }
 
-
 .recommended {
   margin-top: -5%;
 }
 
-@media (min-width: 768px) {
-  
+#display-video{
+  margin-bottom: 5%;
+}
+
+#modal-like{
+  padding-top: 20px;
+}
+#modal-comment{
+  padding-top: 20px;
+}
+
+.recommended-info h3 {
+    margin-top: -10%;
+}
+
+.top-search form input[type="submit"] {
+  margin-top: 8%;
+  margin-left: 25%;
+}
+.top-search form input[type="text"] {
+  margin-left: 40%;
+}
+@media (max-width: 991px){
+  .recommended-info h3 {
+    margin-top: -10%
+  }
+}
+@media (max-width: 768px){
+  .top-search form input[type="text"] {
+    width: 130%;
+    margin-left: 90%;
+  }
+  .top-search form input[type="submit"] {
+    margin-left: 80%;
+    top: 8px;
+  }
+}
+@media (max-width: 480px){
+  .top-search form input[type="text"] {
+    width: 150%;
+    margin-left: 80%;
+  }
+  .top-search form input[type="submit"] {
+    top: 15px;
+  }
 }

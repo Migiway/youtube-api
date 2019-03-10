@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { ChannelService } from './channel.service';
+import { MusicContentService } from './music-content.service';
 
-describe('ChannelService', () => {
+describe('MusicContentService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: ChannelService = TestBed.get(ChannelService);
+    const service: MusicContentService = TestBed.get(MusicContentService);
     expect(service).toBeTruthy();
   });
 });

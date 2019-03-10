@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DisplayInfoComponent } from './display-info.component';
+import { MusicComponent } from './music.component';
 
-describe('DisplayInfoComponent', () => {
-  let component: DisplayInfoComponent;
-  let fixture: ComponentFixture<DisplayInfoComponent>;
+describe('MusicComponent', () => {
+  let component: MusicComponent;
+  let fixture: ComponentFixture<MusicComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DisplayInfoComponent ]
+      declarations: [ MusicComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DisplayInfoComponent);
+    fixture = TestBed.createComponent(MusicComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

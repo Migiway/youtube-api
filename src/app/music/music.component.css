@@ -1,9 +1,13 @@
 .fa-comment:hover{
-  color: #21DEEF;
+color: #21DEEF;
 }
 
 .fa-comment{
-  color: #272c2e;
+color: #272c2e;
+}
+
+#video-display{
+  margin-bottom: 5%;
 }
 
 #modal-comment{

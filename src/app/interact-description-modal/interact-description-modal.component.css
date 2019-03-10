@@ -3,10 +3,11 @@
   z-index: 1041;
   top: -110vh;
   left: calc(50% - 250px);
-  width: 32%;
-  height: 40%;
+  width: 70%;
+  height: 60%;
   border-radius: 5px;
   background-color: white;
+  margin-left: -15%;
 }
 
 .description-popin.open {
@@ -79,7 +80,7 @@ label {
   .description-popin{
     width: 85%;
     margin-left: -160px;
-    height: 45%;
+    height: 60%;
   }
   .description-popin textarea, .description-popin input {
     width: 75%;
@@ -102,7 +103,7 @@ label {
 @media (max-width: 480px){
   .description-popin{
     margin-left: 50px;
-    height: 40%;
+    height: 50%;
   }
   .description-popin textarea {
     width: 60%;

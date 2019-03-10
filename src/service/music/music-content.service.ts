@@ -6,9 +6,9 @@ import {map} from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
-export class MusiqueContentService {
+export class MusicContentService {
 
-  musiqueUrlApi = 'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=8' +
+  musiqueUrlApi = 'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=9' +
     '&playlistId=PLw-VjHDlEOguagnIdctLl5tykDxM5yQn4&key=AIzaSyBnRWLy2jjb9Cpyadm3plaPd__94gJEGzo';
 
 
