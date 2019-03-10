@@ -71,7 +71,7 @@ export class SearchComponent implements OnInit {
     searchInput = searchInput.replace('', '%7C');
     this.search = searchInput;
     this.https.get('https://www.googleapis.com/youtube/v3/search?part=snippet&q='
-      + this.search + '&type=video&videoCaption=any&key=AIzaSyBnRWLy2jjb9Cpyadm3plaPd__94gJEGzo&maxResults=8&pageToken=' + this.nextPage)
+      + this.search + '&type=video&videoCaption=any&key=AIzaSyBnRWLy2jjb9Cpyadm3plaPd__94gJEGzo&maxResults=9&pageToken=' + this.nextPage)
       .subscribe((response: Array<Object>) => {
         this.searchedVideos = response['items'];
         this.nextPage = response['nextPageToken'];
@@ -86,7 +86,7 @@ export class SearchComponent implements OnInit {
     searchInput = searchInput.replace('', '%7C');
     this.search = searchInput;
     this.https.get('https://www.googleapis.com/youtube/v3/search?part=snippet&q=' +
-      this.search + '&type=video&videoCaption=any&key=AIzaSyCyaZRe4xMnxqPdh9_fwuizP7bKTreyKNc&maxResults=8&pageToken=' + this.prevPage)
+      this.search + '&type=video&videoCaption=any&key=AIzaSyCyaZRe4xMnxqPdh9_fwuizP7bKTreyKNc&maxResults=9&pageToken=' + this.prevPage)
       .subscribe((response: Array<Object>) => {
         this.searchedVideos = response['items'];
         this.nextPage = response['nextPageToken'];
