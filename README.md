@@ -15,7 +15,11 @@ API-YOUTUBE est une application web développée avec l'API de youtube et Angula
 
 ## Installation
 
-- Télécharger le projet sur github
+- Télécharger le projet sur github ou clonez le : 
+
+```bash
+git clone git@github.com:tomsmartin/youtube-api.git
+```
 - Lancer l'invité de commande
 - Se placer dans le dossier du projet avec la commande :
 
@@ -45,7 +49,7 @@ ng serve
 ## Obtenir un logo
 - Permet d'afficher le logo d'une chaine youtube en écrivant son slug dans la barre de recherche et de se faire rediriger sur la chaine en question lors d'un clique sur le bouton.
 
-##Playlists
+## Playlists
 - Affiche les playlists personnelles de la personne connectée.
 - Permet d'éditer le titre et la description de la playlist .
 - Supprimer la playlist.
@@ -66,7 +70,11 @@ API-YOUTUBE an angular application which allows to search a video on youtube or 
 
 ## Installation
 
-- Download the project on github or clone it : git@github.com:tomsmartin/youtube-api.git
+- Download the project on github or clone it :
+```bash
+git clone git@github.com:tomsmartin/youtube-api.git
+```
+
 - In command, change directory : 
 ```bash
 cd PROJECT-PATH
@@ -94,7 +102,7 @@ ng serve
 ## Get logo
 - Search channel on Youtube, displays the logo and you can direct acces to this channel with the url.
 
-##Playlists
+## Playlists
 - Display the logged person's playlists.
 - Can edit the title and/or the description.
 - Delete a playlist playlist.
