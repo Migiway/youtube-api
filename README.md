@@ -1,5 +1,5 @@
 # API-YOUTUBE
-[![npm version](https://img.shields.io/badge/node.js-10.15.0-green.svg)](https://img.shields.io/badge/node.js-10.15.0-green.svg) [![npm version](https://img.shields.io/badge/npm%20package-7.0.6-green.svg)](https://img.shields.io/badge/npm%20package-7.0.6-green.svg) [![npm version](https://img.shields.io/appveyor/ci/:user/:repo.svg)](https://img.shields.io/appveyor/ci/:user/:repo.svg)
+[![npm version](https://img.shields.io/badge/node.js-10.15.0-green.svg)](https://img.shields.io/badge/node.js-10.15.0-green.svg) [![npm version](https://img.shields.io/badge/npm%20package-7.0.6-green.svg)](https://img.shields.io/badge/npm%20package-7.0.6-green.svg) 
 
 
 
